@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("Check www.example.com response code") {
             steps{
-                bat '''
+                sh '''
                     TOKEN="test-token"
                     GROUP_ID="-000000000"
                     CODE=$(curl -o /dev/null -s -w %{http_code} www.example.com)
